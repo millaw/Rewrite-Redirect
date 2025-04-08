@@ -6,9 +6,9 @@ if [ "$#" -ne 1 ]; then
 fi
 
 conf_file="$1"
-live_file="CompletedChecks/live_urls.txt"
-not_live_file="CompletedChecks/not_live_urls.txt"
-revised_conf_file="CompletedChecks/revised_${conf_file}"
+live_file="live_urls.txt"
+not_live_file="not_live_urls.txt"
+revised_conf_file="revised_${conf_file}"
 
 # Clear the files if they exist
 > $live_file

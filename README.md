@@ -8,12 +8,17 @@ This project provides a set of scripts to manage and validate rewrite rules for 
 
 2. Navigate to the Script Directory:
 ```
-cd c:\Users\mwynn\Desktop\Plugins\rewrite-redirect
+cd /path/to/the/script/rewrite-redirect
 ```
 
 3. Make the Script Executable (if using a Linux-like environment):
 ```
-chmod +x <file>
+chmod +x revise_rewrite_rules.sh
+```
+
+or
+```
+chmod +x check_urls.sh
 ```
 
 4. Run the `revise_rewrite_rules.sh` Script:
@@ -25,7 +30,7 @@ Specify the configuration file and the type (`nginx`, `apache`, or `htaccess`) a
 For example:
 - To process Nginx rewrite rules:
   ```
-  ./revise_rewrite_rules.sh nginx_hostrewrites_for_cunyedu.conf nginx
+  ./revise_rewrite_rules.sh nginx_hostrewrites.conf nginx
   ```
 - To process Apache redirects:
   ```
@@ -52,3 +57,15 @@ The results will be saved in the `CompletedChecks/` directory:
 
 ### To Schedule the Script to Run Automatically:
 Use a task scheduler like `cron` (on Linux/macOS) or Task Scheduler (on Windows) to automate the script execution.
+
+1. Open the Crontab File:
+```
+crontab -e
+```
+
+2. Add a Cron Job. For example, to run the script every day at 2 AM:
+```
+0 2 * * * /path/to/the/script/directory/<file.sh>
+```
+
+3. Save and Exit.
